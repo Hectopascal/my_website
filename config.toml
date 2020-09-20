@@ -86,7 +86,7 @@ disqusShortname = ""
     [[params.tiles.showcase]]
       title = "Analysis of AirBnB Data in Singapore"
       subtitle = "Predicting the cost of two people staying in Singapore for 4 nights in AirBnB"
-      image = "projects/project1_image.png"
+      image = "projects/singapore.jpg"
       url = "projects/airbnbsg/finalsingaporeproject"
       
       
@@ -105,14 +105,8 @@ disqusShortname = ""
     [[params.tiles.showcase]]
       title = "Steven Spielberg vs Tim Burton"
       subtitle = "Who has higher ratings?"
-      image = "timburton.jpg"
+      image = "projects/timburton.jpg"
       url = "projects/movies/movies"
-
-    [[params.tiles.showcase]]
-      title = "Consequat"
-      subtitle = "Ipsum Dolor Sit Amet"
-      image = "pic05.jpg"
-      url = "blogs/ipsum"
 
 
   [params.blog]

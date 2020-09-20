@@ -1,5 +1,5 @@
 ---
-title: "Session 6: Homework 3"
+title: "A quick look at GDP over time"
 author: "Group 5: Etra Bianco, Himanshu Singh, Yi Yan Ng, Mengze Sun, Christian Gonder, Vasu Dev Puri"
 date: "`r Sys.Date()`"
 output:

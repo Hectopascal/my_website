@@ -1,5 +1,5 @@
 ---
-title: "Session 6: Homework 3"
+title: "Steven Spielberg bs Tim Burton"
 author: "Group 5: Etra Bianco, Himanshu Singh, Yi Yan Ng, Mengze Sun, Christian Gonder, Vasu Dev Puri"
 date: "`r Sys.Date()`"
 output:
@@ -46,8 +46,6 @@ library(openintro)
 library(knitr)
 library(kableExtra)
 ```
-
-# Steven Spielberg bs Tim Burton
 
 For this analysis, we would like to analyze the differences in rating between Steven Spielberg and Tim Burton. Using the IMBD ratings data, we explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. We calculate the confidence intervals for the mean ratings of these two directors and as you can see they overlap. 
 

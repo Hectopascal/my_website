@@ -94,7 +94,7 @@ From our regression analysis, we predict with a 95% level of conficenve that the
 df_raw <- read_csv(here("content/projects/airbnbsg/data","listings.csv"))
 ```
 
-```{r}
+```{r, include=FALSE}
 # Creating custom theme and palette for visualizations
 
 # Generate the colors for the chart procedurally with RColorBrewer
@@ -334,7 +334,7 @@ skim(df_final)
 ```
 ## Exploring the data
 ### Summary Statistics
-```{r}
+```{r, echo=FALSE}
 #computing summary statistics for price variable using favstats
 price_stats <- favstats(~ prices, data = df_final) 
 #computing summary statistics for number_of_reviews variable 

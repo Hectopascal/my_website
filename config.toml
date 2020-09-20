@@ -92,29 +92,29 @@ disqusShortname = ""
     # Display your showcases here.
     
     [[params.tiles.showcase]]
-      title = "Analysis of AirBnB Data in Singapore"
+      title = "How expensive is 4 nights in Singapore?"
       subtitle = "Predicting the cost of two people staying in Singapore for 4 nights in AirBnB"
       image = "projects/project1_image.png"
       url = "projects/airbnbsg"
       
       
     [[params.tiles.showcase]]
-      title = "Tempus"
-      subtitle = "Feugiat Amet Tempus"
-      image = "pic02.jpg"
-      url = "blogs/tempus"
+      title = "Steven Spielberg vs Tim Burton"
+      subtitle = "Who has higher movie ratings?"
+      image = "projects/timburton.jpg"
+      url = "projects/movies"
 
     [[params.tiles.showcase]]
-      title = "Magna"
-      subtitle = "Lorem Etiam Nullam"
+      title = "Visualizing change in GDP"
+      subtitle = "Change in GDP over the years"
       image = "pic03.jpg"
-      url = "blogs/magna"
+      url = "projects/gdpcountries"
 
     [[params.tiles.showcase]]
-      title = "Ipsum"
-      subtitle = "Nisl Sed Aliquam"
-      image = "pic04.jpg"
-      url = "blogs/ipsum"
+      title = "Ferility in different countries"
+      subtitle = "A visualization of fertility rate and its relationship with other factors"
+      image = ""
+      url = "projects/fertility "
 
     [[params.tiles.showcase]]
       title = "Consequat"

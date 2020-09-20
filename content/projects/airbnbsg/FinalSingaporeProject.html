@@ -52,43 +52,6 @@ From our regression analysis, we predict with a 95% level of conficenve that the
 <pre class="r"><code>#importing the raw data from insideairbnb.com 
 #used read_csv as vroom caused a column mismatch
 df_raw &lt;- read_csv(here(&quot;content/projects/airbnbsg/data&quot;,&quot;listings.csv&quot;))</code></pre>
-<pre class="r"><code># Creating custom theme and palette for visualizations
-
-# Generate the colors for the chart procedurally with RColorBrewer
-palette &lt;- brewer.pal(&quot;Greys&quot;, n=9)
-color.background = palette[2]
-color.grid.major = palette[3]
-color.axis.text = palette[6]
-color.axis.title = palette[7]
-color.title = palette[9]
-
-#setting up a fil paletter
-fill_palette &lt;- c(&#39;#EAAEAE&#39; , &#39;#E8C29C&#39;  , &#39;#E4B181&#39; , &#39;#DE9754&#39;)
-
-#creating custom theme
-theme_cust &lt;- theme_minimal(base_size = 13) +
-  theme(
-    #formatting the axis
-    axis.line = element_blank() ,
-    axis.text=element_text(size=10,color=color.axis.text, face = &#39;bold&#39;, family = &#39;Helvetica&#39;),
-    axis.title = element_text(size=13,color=color.axis.text , face = &#39;bold&#39;, family = &#39;Helvetica&#39;),
-    
-    #formatiing title
-    plot.title = element_text(size=16,color=color.axis.text , face = &#39;bold&#39;, family = &#39;Helvetica&#39;),
-    plot.subtitle = element_text(size=13,color=color.axis.text , family = &#39;Helvetica&#39; , face = &#39;bold&#39;),
-    
-    
-    #panel background
-    panel.background = element_rect(fill = color.background , color = color.background),
-    
-    #plot background 
-    plot.background = element_rect(fill = color.background , color = color.background),
-    
-    # Format the grid
-   panel.grid.minor=element_line(color=color.grid.major,size=.25) 
-   
-   #legend posiition
-  )</code></pre>
 </div>
 <div id="exploratory-data-analysis" class="section level1">
 <h1>Exploratory Data Analysis</h1>
@@ -365,37 +328,6 @@ skim(df_final)</code></pre>
 <h2>Exploring the data</h2>
 <div id="summary-statistics" class="section level3">
 <h3>Summary Statistics</h3>
-<pre class="r"><code>#computing summary statistics for price variable using favstats
-price_stats &lt;- favstats(~ prices, data = df_final) 
-#computing summary statistics for number_of_reviews variable 
-reviews_stats &lt;- favstats(~ number_of_reviews, data = df_final)
-#computing summary statistics for review_scores_rating variable 
-rating_stats &lt;- favstats(~ review_scores_rating, data = df_final)
-#computing summary statistics for bedrooms variable 
-bedrooms &lt;- favstats(~ bedrooms, data = df_final)
-#computing summary statistics for beds variable 
-beds &lt;- favstats(~ beds, data = df_final)
-#computing summary statistics for bathrooms variable 
-bathrooms &lt;- favstats(~ bathrooms, data = df_final)
-#computing summary statistics for accommodates variable 
-accommodates &lt;- favstats(~ accommodates, data = df_final)
-#computing summary statistics for minimum_nights variable 
-min_nights &lt;- favstats(~ minimum_nights, data = df_final)
-#computing summary statistics for guests_include variable 
-guests_included &lt;- favstats(~ guests_included, data = df_final)
-#computing summary statistics for cleaning_fee_cleaned variable 
-cleaning_fee_cleaned &lt;- favstats(~ cleaning_fee_cleaned, data = df_final)
-#computing summary statistics for price_4_nights variable 
-price_4_nights &lt;- favstats(~ price_4_nights, data = df_final)
-
-#combined all of the above summary statistics for our variables in one table
-sum_tab &lt;- rbind(price_stats, reviews_stats, rating_stats, bedrooms, beds, bathrooms, accommodates, min_nights, guests_included, cleaning_fee_cleaned, price_4_nights) %&gt;%
-  #adding a column with the variable names 
-  mutate(variable  = c(&quot;Prices&quot; , &quot;Reviews&quot; , &quot;Ratings&quot;, &quot;Bedrooms&quot;, &quot;Beds&quot;, &quot;Bathrooms&quot;, &quot;Accommodates&quot;, &quot;Min Nights&quot;, &quot;Guests Included&quot;, &quot;Cleaning fee&quot;, &quot;Price 4 nights&quot;)) 
-sum_tab[,c(10,1:9)] %&gt;% 
-  #Formatting the table for HTML
-kbl(caption = &quot;Summary Statistics for Singapore&#39;s AirBnB listings&quot;) %&gt;% 
-  kable_styling() </code></pre>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:unnamed-chunk-9">Table 2: </span>Summary Statistics for Singapore’s AirBnB listings

@@ -1,0 +1,180 @@
+---
+title: "Session 6: Homework 3"
+author: "Group 5: Etra Bianco, Himanshu Singh, Yi Yan Ng, Mengze Sun, Christian Gonder, Vasu Dev Puri"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: flatly
+    highlight: zenburn
+    number_sections: yes
+    toc: yes
+    toc_float: yes
+    code_folding: show
+---
+
+
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
+
+
+```{r load-libraries, echo=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(mosaic)
+library(ggthemes)
+library(GGally)
+library(readxl)
+library(here)
+library(skimr)
+library(janitor)
+library(broom)
+library(tidyquant)
+library(infer)
+library(openintro)
+library(knitr)
+library(kableExtra)
+```
+
+# Steven Spielberg bs Tim Burton
+
+For this analysis, we would like to analyze the differences in rating between Steven Spielberg and Tim Burton. Using the IMBD ratings data, we explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. We calculate the confidence intervals for the mean ratings of these two directors and as you can see they overlap. 
+
+```{r}
+
+movies <- read_csv(here::here("content/projects/movies/data", "movies.csv"))
+#Creating the data table for the graph
+
+directors_name <- c("Steven Spielberg", "Tim Burton")
+
+plot_table <- movies %>% 
+select(director, rating) %>%
+filter(director %in% directors_name) 
+ 
+
+#Calculation of Confidence Intervals
+#(1) Compute the mean, degrees of freedom, standard deviation
+
+# Mean calc
+mean_imdb_rating <- plot_table %>%
+group_by(director) %>%
+summarise(Average_IMDB_Rating = round(mean(rating),2))
+
+# DF calc
+degrees_of_freedom <- plot_table %>% 
+group_by(director) %>%
+ summarise(freedom_calc = count(director))  
+degrees_of_freedom
+
+# SD calc
+SD_rating <- plot_table %>%
+group_by(director) %>%
+summarise(Standard_dev_rating = sd(rating))
+
+# SE calc
+se <- SD_rating$Standard_dev_rating/((degrees_of_freedom$freedom_calc+1)^0.5)
+
+#CI calc
+CI_calc_upper <- (mean_imdb_rating$Average_IMDB_Rating + qt(0.975,degrees_of_freedom$freedom_calc-1)*se) %>%
+  round(2)
+
+CI_calc_lower <- (mean_imdb_rating$Average_IMDB_Rating - qt(0.975,degrees_of_freedom$freedom_calc-1)*se) %>%
+  round(2)
+
+
+#Plotting the graph!
+ggplot(mean_imdb_rating,aes (x=Average_IMDB_Rating, y=director)) + 
+  geom_rect(xmax= 7.32, xmin=7.28, ymin = 0, ymax = 80, fill = "grey") + 
+  geom_errorbar(aes(x= Average_IMDB_Rating, xmin = CI_calc_lower, xmax = CI_calc_upper, color = director), size = 1, width = 0.05) +
+  labs( 
+    x = "Mean IMDB Rating",
+    y = ""
+  ) + 
+  geom_point(aes(color = director), size = 2) + 
+  geom_text(aes(label = round(Average_IMDB_Rating, 2), x = Average_IMDB_Rating), nudge_y = 0.1, size = 4) + 
+  geom_text(aes(label = round(CI_calc_lower, 2), x = CI_calc_lower),nudge_y = 0.1, size = 3) +
+  geom_text(aes(label = round(CI_calc_upper, 2), x = CI_calc_upper),nudge_y = 0.1, size = 3) +
+  ggtitle(
+    label = "Do Spielberg and Burton have the same mean IMDB ratings?", 
+    subtitle = "95% confidence intervals overlap"
+  ) +theme_bw()+
+  theme(panel.background = element_rect(linetype = "solid", colour = "white", fill = ("white")), 
+        legend.position = "none")
+
+
+```
+
+
+We load the data and examine its structure to perform hypothesis testing.
+
+We conduct a two-tailed test with a 95% confidence interval as follows:
+
+- Null hypothesis = The difference between mean ratings of Steven Spielberg and Tim Burton is 0. 
+- Alternative hypothesis = The difference between the mean ratings of Steven Spielberg and Tim Burton is not 0.
+
+T Score = $\frac{\hat{\beta}-\beta_0 }{\sqrt{\frac{s_1^2}{n} + \frac{s_1^2}{n} }}$
+
+The calculated T-statistic= 2.714375 and p-value = 0.01077667. Since the P value is less 5% and the T Score falls outside the critical values, we reject the null hypothesis. Below we show the code used to calculate the p value, using t.test() and the infer package.
+
+```{r,cache=TRUE}
+
+# t.test()
+
+#Creating the data table for the graph
+directors_name <- c("Steven Spielberg", "Tim Burton")
+plot_table <- movies %>% 
+  select(director, rating) %>%
+  filter(director %in% directors_name) 
+
+
+# Extract rating data from data frame 
+Rating_of_Steven_S <- plot_table %>% 
+  filter(director == "Steven Spielberg") %>%
+  select(rating)
+
+Rating_of_Tim_B <- plot_table %>% 
+  filter(director == "Tim Burton") %>%
+  select(rating)
+
+Test_results <- t.test(Rating_of_Steven_S,Rating_of_Tim_B) 
+Test_results
+Using_t_test_library <- plot_table %>%
+  t_test(formula = rating ~ director, order = c("Steven Spielberg", "Tim Burton"), alternative = "two-sided")
+
+Using_t_test_library
+
+# infer package
+
+#Calculating the t statistic 
+compared_movies <- movies %>% 
+  filter((director=="Steven Spielberg")|(director=="Tim Burton"))
+
+
+simulated_null <- compared_movies %>% 
+  specify(rating~director) %>%
+  hypothesize(null="independence")%>%
+  generate(reps=1000,type="permute")%>%
+  calculate(stat="diff in means", order=c("Steven Spielberg","Tim Burton"))
+
+tim_mean <- compared_movies %>% 
+  filter(director=="Tim Burton") %>% 
+  summarize(tim_mean = mean(rating))
+steven_mean <- compared_movies %>% 
+  filter(director=="Steven Spielberg") %>% 
+  summarize(steven_mean = mean(rating))
+
+rating_diff <- tim_mean-steven_mean
+
+simulated_null%>%get_pvalue(obs_stat = rating_diff[1,1],direction="both")
+```

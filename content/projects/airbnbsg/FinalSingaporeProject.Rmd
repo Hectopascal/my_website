@@ -91,7 +91,7 @@ From our regression analysis, we predict with a 95% level of conficenve that the
 ```{r load data}
 #importing the raw data from insideairbnb.com 
 #used read_csv as vroom caused a column mismatch
-df_raw <- read_csv(here("data","listings.csv"))
+df_raw <- read_csv(here("content/projects/airbnbsg/data","listings.csv"))
 ```
 
 ```{r}

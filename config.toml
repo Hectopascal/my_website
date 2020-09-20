@@ -92,10 +92,12 @@ disqusShortname = ""
     # Display your showcases here.
     
     [[params.tiles.showcase]]
-      title = "My Project 1 title"
-      subtitle = "What is the question I address?"
+      title = "Analysis of AirBnB Data in Singapore"
+      subtitle = "Predicting the cost of two people staying in Singapore for 4 nights in AirBnB"
       image = "projects/project1_image.png"
-      url = "projects/project1"
+      url = "projects/airbnbsg"
+      
+      
     [[params.tiles.showcase]]
       title = "Tempus"
       subtitle = "Feugiat Amet Tempus"

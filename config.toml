@@ -94,15 +94,8 @@ disqusShortname = ""
     [[params.tiles.showcase]]
       title = "How expensive is 4 nights in Singapore?"
       subtitle = "Predicting the cost of two people staying in Singapore for 4 nights in AirBnB"
-      image = "projects/project1_image.png"
+      image = "projects/singapore.jpg"
       url = "projects/airbnbsg"
-      
-      
-    [[params.tiles.showcase]]
-      title = "Steven Spielberg vs Tim Burton"
-      subtitle = "Who has higher movie ratings?"
-      image = "projects/timburton.jpg"
-      url = "projects/movies"
 
     [[params.tiles.showcase]]
       title = "Visualizing change in GDP"
@@ -114,19 +107,14 @@ disqusShortname = ""
       title = "Ferility in different countries"
       subtitle = "A visualization of fertility rate and its relationship with other factors"
       image = ""
-      url = "projects/fertility "
-
+      url = "projects/fertility"
+      
     [[params.tiles.showcase]]
-      title = "Consequat"
-      subtitle = "Ipsum Dolor Sit Amet"
-      image = "pic05.jpg"
-      url = "blogs/ipsum"
+      title = "Steven Spielberg vs Tim Burton"
+      subtitle = "Who has higher movie ratings?"
+      image = "projects/timburton.jpg"
+      url = "projects/movies"
 
-    [[params.tiles.showcase]]
-      title = "Etiam"
-      subtitle = "Feugiat Amet Tempus"
-      image = "pic06.jpg"
-      url = "blogs/ipsum"
     # You can make more showcases by copy and pasting the code above
 
   [params.blog]

@@ -8,6 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://yiyan-portfolio.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>A look into ferility in different countries</title>
+      <link>https://yiyan-portfolio.netlify.app/projects/fertility/fertilitymortality/</link>
+      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://yiyan-portfolio.netlify.app/projects/fertility/fertilitymortality/</guid>
+      <description>Fertility in different countriesIn the following section of the report we analyze demographic data across countries sourced from the World Bank, specifically we will look at data on:
+Life expectancy at birth (life_expectancy_years.csv)GDP per capita in constant 2010 US$ (https://data.worldbank.org/indicator/NY.GDP.PCAP.KD)Female fertility: The number of babies per woman (https://data.worldbank.org/indicator/SP.DYN.TFRT.IN)Primary school enrollment as % of children attending primary school (https://data.worldbank.org/indicator/SE.PRM.NENR)Mortality rate, for under 5, per 1000 live births (https://data.</description>
+    </item>
+    
+    <item>
       <title>Predicting AirBnB Prices in Singapore</title>
       <link>https://yiyan-portfolio.netlify.app/projects/airbnbsg/finalsingaporeproject/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>

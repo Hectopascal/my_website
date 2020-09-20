@@ -107,6 +107,12 @@ disqusShortname = ""
       subtitle = "Who has higher ratings?"
       image = "projects/timburton.jpg"
       url = "projects/movies/movies"
+      
+    [[params.tiles.showcase]]
+      title = "What makes a college have higher entrance scores?"
+      subtitle = "Analyzing factors that affect entrance SAT scores of colleges"
+      image = ""
+      url = "projects/uni/uniscores.pdf"
 
 
   [params.blog]

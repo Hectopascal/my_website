@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Portfolio website for Yi Yan Ng</title>
+    <link>https://yiyan-portfolio.netlify.app/projects/</link>
+    <description>Recent content in Projects on Portfolio website for Yi Yan Ng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://yiyan-portfolio.netlify.app/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Predicting AirBnB Prices in Singapore</title>
+      <link>https://yiyan-portfolio.netlify.app/projects/airbnbsg/finalsingaporeproject/</link>
+      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://yiyan-portfolio.netlify.app/projects/airbnbsg/finalsingaporeproject/</guid>
+      <description>Executive SummaryIn this report we will be analysing data about Airbnb listings in Singapore with the goal of building a model to predict the total cost for two people staying four nights in Singapore. The data is from insideairbnb.com
+Purpose &amp;amp; Scope: the purpose of this report is to elucidate upon the set deliverable across five facets:
+Perform a cohesive exploratory data analysis;Chart data in plots and geospatial format to discern trends and select explanatory variables for regression purposes;Conduct a robust regression analysis with selected variables;Diagnose variables demonstrating collinearity, replace said variables to curtail “Variance Inflation Factor”, summarize shortlisted data sets for predictive and informative purposes.</description>
+    </item>
+    
+  </channel>
+</rss>

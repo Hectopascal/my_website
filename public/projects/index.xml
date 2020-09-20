@@ -13,8 +13,17 @@
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://yiyan-portfolio.netlify.app/projects/fertility/fertilitymortality/</guid>
-      <description>Fertility in different countriesIn the following section of the report we analyze demographic data across countries sourced from the World Bank, specifically we will look at data on:
-Life expectancy at birth (life_expectancy_years.csv)GDP per capita in constant 2010 US$ (https://data.worldbank.org/indicator/NY.GDP.PCAP.KD)Female fertility: The number of babies per woman (https://data.worldbank.org/indicator/SP.DYN.TFRT.IN)Primary school enrollment as % of children attending primary school (https://data.worldbank.org/indicator/SE.PRM.NENR)Mortality rate, for under 5, per 1000 live births (https://data.</description>
+      <description>In the following section we analyze demographic data across countries sourced from the World Bank, specifically we will look at data on:
+Life expectancy at birth (life_expectancy_years.csv)GDP per capita in constant 2010 US$ (https://data.worldbank.org/indicator/NY.GDP.PCAP.KD)Female fertility: The number of babies per woman (https://data.worldbank.org/indicator/SP.DYN.TFRT.IN)Primary school enrollment as % of children attending primary school (https://data.worldbank.org/indicator/SE.PRM.NENR)Mortality rate, for under 5, per 1000 live births (https://data.worldbank.org/indicator/SH.DYN.MORT)HIV prevalence (adults_with_hiv_percent_age_15_49.</description>
+    </item>
+    
+    <item>
+      <title>A quick look at GDP components over time</title>
+      <link>https://yiyan-portfolio.netlify.app/projects/gdpcountries/gdpsection/</link>
+      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://yiyan-portfolio.netlify.app/projects/gdpcountries/gdpsection/</guid>
+      <description>The GDP data we will look at is from the United Nations’ National Accounts Main Aggregates Database, which contains estimates of total GDP and its components for all countries from 1970 to today. We will look at how GDP and its components have changed over time, and compare different countries and how much each component contributes to that country’s GDP. At the risk of oversimplifying things, the main components of gross domestic product, GDP are personal consumption (C), business investment (I), government spending (G) and net exports (exports - imports).</description>
     </item>
     
     <item>
@@ -29,22 +38,13 @@ Perform a cohesive exploratory data analysis;Chart data in plots and geospatial
     </item>
     
     <item>
-      <title>Session 6: Homework 3</title>
-      <link>https://yiyan-portfolio.netlify.app/projects/gdpcountries/gdpsection/</link>
-      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://yiyan-portfolio.netlify.app/projects/gdpcountries/gdpsection/</guid>
-      <description>GDP components over time and among countriesThe GDP data we will look at is from the United Nations’ National Accounts Main Aggregates Database, which contains estimates of total GDP and its components for all countries from 1970 to today. We will look at how GDP and its components have changed over time, and compare different countries and how much each component contributes to that country’s GDP. At the risk of oversimplifying things, the main components of gross domestic product, GDP are personal consumption (C), business investment (I), government spending (G) and net exports (exports - imports).</description>
-    </item>
-    
-    <item>
-      <title>Session 6: Homework 3</title>
+      <title>Steven Spielberg vs Tim Burton</title>
       <link>https://yiyan-portfolio.netlify.app/projects/movies/movies/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://yiyan-portfolio.netlify.app/projects/movies/movies/</guid>
-      <description>Steven Spielberg bs Tim BurtonFor this analysis, we would like to analyze the differences in rating between Steven Spielberg and Tim Burton. Using the IMBD ratings data, we explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. We calculate the confidence intervals for the mean ratings of these two directors and as you can see they overlap.
-movies &amp;lt;- read_csv(here::here(&amp;quot;content/projects/movies/data&amp;quot;, &amp;quot;movies.</description>
+      <description>For this analysis, we would like to analyze the differences in rating between Steven Spielberg and Tim Burton. Using the IMBD ratings data, we explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. We calculate the confidence intervals for the mean ratings of these two directors and as you can see they overlap.
+movies &amp;lt;- read_csv(here::here(&amp;quot;content/projects/movies/data&amp;quot;, &amp;quot;movies.csv&amp;quot;))#Creating the data table for the graphdirectors_name &amp;lt;- c(&amp;quot;Steven Spielberg&amp;quot;, &amp;quot;Tim Burton&amp;quot;)plot_table &amp;lt;- movies %&amp;gt;% select(director, rating) %&amp;gt;%filter(director %in% directors_name) #Calculation of Confidence Intervals#(1) Compute the mean, degrees of freedom, standard deviation# Mean calcmean_imdb_rating &amp;lt;- plot_table %&amp;gt;%group_by(director) %&amp;gt;%summarise(Average_IMDB_Rating = round(mean(rating),2))# DF calcdegrees_of_freedom &amp;lt;- plot_table %&amp;gt;% group_by(director) %&amp;gt;%summarise(freedom_calc = count(director)) degrees_of_freedom## # A tibble: 2 x 2## director freedom_calc## &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt;## 1 Steven Spielberg 23## 2 Tim Burton 16# SD calcSD_rating &amp;lt;- plot_table %&amp;gt;%group_by(director) %&amp;gt;%summarise(Standard_dev_rating = sd(rating))# SE calcse &amp;lt;- SD_rating$Standard_dev_rating/((degrees_of_freedom$freedom_calc+1)^0.</description>
     </item>
     
   </channel>

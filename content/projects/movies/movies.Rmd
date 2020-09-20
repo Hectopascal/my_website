@@ -1,5 +1,5 @@
 ---
-title: "Steven Spielberg bs Tim Burton"
+title: "Steven Spielberg vs Tim Burton"
 author: "Group 5: Etra Bianco, Himanshu Singh, Yi Yan Ng, Mengze Sun, Christian Gonder, Vasu Dev Puri"
 date: "`r Sys.Date()`"
 output:

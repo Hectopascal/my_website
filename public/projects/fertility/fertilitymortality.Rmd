@@ -46,9 +46,7 @@ library(lubridate)
 library(infer)
 ```
 
-# Fertility in different countries
-
-In the following section of the report we analyze demographic data across countries sourced from the World Bank, specifically we will look at data on:
+In the following section we analyze demographic data across countries sourced from the World Bank, specifically we will look at data on:
 
 - Life expectancy at birth (life_expectancy_years.csv)
 - GDP per capita in constant 2010 US$ (https://data.worldbank.org/indicator/NY.GDP.PCAP.KD)

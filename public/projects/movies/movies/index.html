@@ -8,7 +8,7 @@
 	<meta name="description" content="MAM2021 at London Business School">
 	<meta name="author" content="Yi Yan Ng">
 	<meta name="generator" content="Hugo 0.75.0" />
-	<title>Session 6: Homework 3 &middot; Portfolio website for Yi Yan Ng</title>
+	<title>Steven Spielberg vs Tim Burton &middot; Portfolio website for Yi Yan Ng</title>
 	<!-- Stylesheets -->
 	
 	<link rel="stylesheet" href="https://yiyan-portfolio.netlify.app/css/main.css"/>
@@ -73,14 +73,12 @@
                     <section id="one">
                         <div class="inner">
                             <header class="major">
-                                <h1>Session 6: Homework 3</h1>
+                                <h1>Steven Spielberg vs Tim Burton</h1>
                             </header>
                             
                             
 
 
-<div id="steven-spielberg-bs-tim-burton" class="section level1">
-<h1>Steven Spielberg bs Tim Burton</h1>
 <p>For this analysis, we would like to analyze the differences in rating between Steven Spielberg and Tim Burton. Using the IMBD ratings data, we explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. We calculate the confidence intervals for the mean ratings of these two directors and as you can see they overlap.</p>
 <pre class="r"><code>movies &lt;- read_csv(here::here(&quot;content/projects/movies/data&quot;, &quot;movies.csv&quot;))
 #Creating the data table for the graph
@@ -219,7 +217,6 @@ simulated_null%&gt;%get_pvalue(obs_stat = rating_diff[1,1],direction=&quot;both&
 ##   p_value
 ##     &lt;dbl&gt;
 ## 1   0.004</code></pre>
-</div>
 
                         </div>
                     </section>

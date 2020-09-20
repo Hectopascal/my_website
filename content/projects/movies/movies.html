@@ -1,5 +1,5 @@
 ---
-title: "Session 6: Homework 3"
+title: "Steven Spielberg vs Tim Burton"
 author: "Group 5: Etra Bianco, Himanshu Singh, Yi Yan Ng, Mengze Sun, Christian Gonder, Vasu Dev Puri"
 date: "2020-09-20"
 output:
@@ -14,8 +14,6 @@ output:
 
 
 
-<div id="steven-spielberg-bs-tim-burton" class="section level1">
-<h1>Steven Spielberg bs Tim Burton</h1>
 <p>For this analysis, we would like to analyze the differences in rating between Steven Spielberg and Tim Burton. Using the IMBD ratings data, we explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. We calculate the confidence intervals for the mean ratings of these two directors and as you can see they overlap.</p>
 <pre class="r"><code>movies &lt;- read_csv(here::here(&quot;content/projects/movies/data&quot;, &quot;movies.csv&quot;))
 #Creating the data table for the graph
@@ -154,4 +152,3 @@ simulated_null%&gt;%get_pvalue(obs_stat = rating_diff[1,1],direction=&quot;both&
 ##   p_value
 ##     &lt;dbl&gt;
 ## 1   0.004</code></pre>
-</div>
